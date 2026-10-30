@@ -49,4 +49,15 @@ canvas.addEventListener("mousemove", function(event) {
     ctx.moveTo(pointX, 300);
     ctx.lineTo(pointX, pointY);
     ctx.stroke();
+
+    const coordinates = document.getElementById("coordinates");
+    coordinates.textContent = "(" + unitX.toFixed(2) + ", " + unitY.toFixed(2) + ")";
+
+    const angleDisplay = document.getElementById("angle");
+    let degrees = angle * (180 / Math.PI);
+
+    if (degrees < 0) {
+        degrees += 360;
+    }
+    angleDisplay.textContent = degrees.toFixed(2) + "°";
 });
